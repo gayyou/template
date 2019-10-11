@@ -1,5 +1,5 @@
 import {getModule, Module, Mutation, VuexModule} from 'vuex-module-decorators';
-import store from '@/store/store';
+import store from '../store';
 
 /**
  * @description store模块化的用法，其中到出去的模块可以直接用
