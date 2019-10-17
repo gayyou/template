@@ -11,6 +11,7 @@
   "dependencies": {
     "babel-plugin-component": "^1.1.1",
     "core-js": "^2.6.5",
+    "sass-resources-loader": "^2.0.1",
     "vue": "^2.6.10",
     "vue-class": "^2.0.1",
     "vue-class-component": "^7.0.2",
@@ -32,7 +33,6 @@
     "mochawesome": "^4.1.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "sass-resources-loader": "^2.0.1",
     "style-resources-loader": "^1.2.1",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10",

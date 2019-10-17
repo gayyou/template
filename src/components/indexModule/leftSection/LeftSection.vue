@@ -9,7 +9,7 @@
   box-shadow:0 9px 32px 0 rgba(47,51,61,0.48);
 
   .page-info {
-    @include clear-both;
+    @include clear-float;
 
     position: relative;
     width: 100%;
@@ -36,10 +36,11 @@
   }
 
   .module-list-container {
-    @include clear-both;
+    @include clear-float;
 
     position: relative;
     width: 100%;
+    margin-top: .28rem;
   }
 }
 </style>
@@ -74,7 +75,7 @@ import {pageManageStore} from "@/store/modules/PageManageStore";
 })
 export default class LeftSection extends Vue {
   get moduleList() {
-    return pageManageStore.currentModuleID;
+    return pageManageStore.moduleList;
   }
 }
 </script>

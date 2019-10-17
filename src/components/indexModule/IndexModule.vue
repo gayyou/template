@@ -2,8 +2,6 @@
 @import "../../styles/mixin.scss";
 
 .index-page {
-  @include flex-center;
-
   position: relative;
   width: 100%;
 }
@@ -30,8 +28,6 @@ import {ExampleStore} from "@/store/modules/ExampleModule";
   }
 })
 export default class IndexModule extends Vue {
-  mounted() {
-    ExampleStore.setMsg("message");
-  }
+
 }
 </script>

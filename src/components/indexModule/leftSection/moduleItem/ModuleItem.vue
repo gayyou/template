@@ -1,6 +1,7 @@
 <style lang="scss" scoped>
 @import "../../../../styles/mixin.scss";
 .item-container {
+  cursor: pointer;
   position: relative;
   width: 100%;
   height: .48rem;
@@ -23,6 +24,21 @@
     position: relative;
     width: 100%;
     height: .48rem;
+
+    img {
+      display: block;
+      width: .22rem;
+      height: .31rem;
+      margin-left: .44rem;
+    }
+
+    span {
+      display: block;
+      font-size: .18rem;
+      font-weight: 300;
+      color:rgba(255,255,255,1);
+      margin-left: .17rem;
+    }
   }
 }
 </style>
@@ -54,6 +70,7 @@ export default class ModuleItem extends Vue {
   @Prop() iconUrl!: string;
 
   changeModule() {
+    console.log(pageManageStore.setCurrentModuleID)
     pageManageStore.setCurrentModuleID(this.id);
   }
 

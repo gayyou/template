@@ -36,6 +36,7 @@ class PageManageStore extends VuexModule {
 
   public currentModuleID: number = 1;
 
+  @Mutation
   public setCurrentModuleID(id: number) {
     this.currentModuleID = id;
   }
