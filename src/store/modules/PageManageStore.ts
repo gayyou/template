@@ -5,6 +5,7 @@ interface ModuleItem {
   id: number;
   name: string;
   iconUrl: string;
+  routerName: string;
 }
 
 /**
@@ -13,24 +14,27 @@ interface ModuleItem {
 @Module({
   dynamic: true,
   store,
-  name: 'PageManageStore',
+  name: 'PageManageStore'
 })
 class PageManageStore extends VuexModule {
   public moduleList: ModuleItem[] = [
     {
       id: 1,
       name: '上传word',
-      iconUrl: require('@/assets/images/icons/upload.png')
+      iconUrl: require('@/assets/images/icons/upload.png'),
+      routerName: 'Upload'
     },
     {
       id: 2,
       name: '表单约束',
-      iconUrl: require('@/assets/images/icons/limit.png')
+      iconUrl: require('@/assets/images/icons/limit.png'),
+      routerName: 'Constraint'
     },
     {
       id: 3,
       name: '用户页面',
-      iconUrl: require('@/assets/images/icons/user_page.png')
+      iconUrl: require('@/assets/images/icons/user_page.png'),
+      routerName: 'UserPage'
     }
   ];
 

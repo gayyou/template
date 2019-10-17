@@ -5,6 +5,7 @@
   position: relative;
   width: 100%;
   height: .48rem;
+  margin-bottom: .18rem;
 
   .choice-label {
     position: absolute;
@@ -47,7 +48,7 @@
   <div class="item-container"
     @click="changeModule"
   >
-    <div class="choice-label" :class="currentModuleID === id ? 'choice-label-active' : ''"></div>
+    <div class="choice-label" :class="currentModuleID === id ? '' : 'choice-label-active'"></div>
     <div class="item-info">
       <img :src="iconUrl" />
       <span>{{ name }}</span>
@@ -69,9 +70,13 @@ export default class ModuleItem extends Vue {
 
   @Prop() iconUrl!: string;
 
+  @Prop() routerName!: string;
+
   changeModule() {
-    console.log(pageManageStore.setCurrentModuleID)
     pageManageStore.setCurrentModuleID(this.id);
+    this.$router.push({
+      name: this.routerName
+    });
   }
 
   get currentModuleID() {

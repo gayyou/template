@@ -60,6 +60,7 @@
         :name="item.name"
         :icon-url="item.iconUrl"
         :id="item.id"
+        :routerName="item.routerName"
       ></module-item>
     </div>
   </div>
