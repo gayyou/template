@@ -53,3 +53,27 @@ export function cached(fn: any) {
     return cacheMap[parameter] || (cacheMap[parameter] = fn(parameter));
   });
 }
+
+export function isPrimitive(value: any) {
+  return (
+    typeof value === 'string' ||
+    typeof value === 'number' ||
+    typeof value === 'boolean'
+  );
+}
+
+export function isString(str: any) {
+  return (typeof str === 'string') && str.constructor === String;
+}
+
+export function isNumber(tar: any) {
+  return !isNaN(tar) && typeof tar === 'number';
+}
+
+export function isBoolean(tar: any) {
+  return typeof tar === 'boolean';
+}
+
+export function isArray(tar: any) {
+  return Object.prototype.toString.call(tar) === '[object Array]';
+}

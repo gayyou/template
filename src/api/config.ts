@@ -11,7 +11,35 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // @ts-ignore
-export const _Request = axios.create({
+const _Request = axios.create({
   baseURL: baseUrl,
   timeout: 5000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
 });
+
+
+export class Request {
+  public static get(url: string): Promise<any> {
+    return _Request.get(url);
+  }
+
+  public static post(url: string, data: any): Promise<any> {
+    return _Request.post(url, data);
+  }
+
+  public static upload(url: string, data: any): Promise<any> {
+    return _Request.post(url, data, {
+      headers:{'Content-Type':'multipart/form-data'}
+    });
+  }
+
+  public static put(url: string, data: any) {
+    return _Request.put(url, data);
+  }
+
+  public static delete(url: string, data: any) {
+    return _Request.delete(url);
+  }
+}
