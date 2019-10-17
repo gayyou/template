@@ -6,12 +6,16 @@ import {LoginRouter} from '@/router/modules/LoginRouter';
 Vue.use(Router);
 
 export const constantRoutes: RouteConfig[] = [
+  {
+    path: '/',
+    redirect: '/index'
+  },
   IndexRouter,
   LoginRouter
 ];
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes: constantRoutes
 });

@@ -20,17 +20,17 @@ class PageManageStore extends VuexModule {
     {
       id: 1,
       name: '上传word',
-      iconUrl: ''
+      iconUrl: require('@/assets/images/icons/upload.png')
     },
     {
       id: 2,
       name: '表单约束',
-      iconUrl: ''
+      iconUrl: require('@/assets/images/icons/limit.png')
     },
     {
       id: 3,
       name: '用户页面',
-      iconUrl: ''
+      iconUrl: require('@/assets/images/icons/user_page.png')
     }
   ];
 

@@ -77,3 +77,24 @@ export function isBoolean(tar: any) {
 export function isArray(tar: any) {
   return Object.prototype.toString.call(tar) === '[object Array]';
 }
+
+/**
+ * @description 得到当前日期
+ * @author Weybn
+ * @version 1.0.0
+ */
+export function getCurrentDate() {
+  let date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  return [year, month, day].map(formatNumber).join('-');
+}
+/**
+ * 将时间规范化
+ */
+const formatNumber = (n: number) => {
+  let numStr = n.toString();
+  return numStr[1] ? numStr : '0' + numStr;
+}
