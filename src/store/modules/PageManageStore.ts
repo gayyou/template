@@ -40,6 +40,20 @@ class PageManageStore extends VuexModule {
 
   public currentModuleID: number = 1;
 
+  public isShowAddFiledLayer: boolean = false;
+
+  public isShowConstraintLayer: boolean = true;
+
+  @Mutation
+  public setShowAddFiled(status: boolean) {
+    this.isShowAddFiledLayer = status;
+  }
+
+  @Mutation
+  public setShowConstraintLayer(status: boolean) {
+    this.isShowConstraintLayer = status;
+  }
+
   @Mutation
   public setCurrentModuleID(id: number) {
     this.currentModuleID = id;

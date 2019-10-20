@@ -14,7 +14,6 @@
     transform: translateX(-50%) translateY(-50%);
     width:3.44rem;
     height:2.84rem;
-    padding: .16rem;
     background:rgba(255,255,255,1);
     box-shadow:0 0 16px 0 rgba(31,31,31,0.12);
 
@@ -24,6 +23,7 @@
       border-bottom: 1px solid rgba(230,230,230,1);
 
       span {
+        float: left;
         width: 100%;
         display: block;
         text-align: start;
@@ -37,10 +37,10 @@
 </style>
 
 <template>
-  <div class="layer-background">
+  <div class="layer-background" v-if="addFiledLayerStatus || addConstraintLayerStatus">
     <div class="layer-container">
-      <AddFiled></AddFiled>
-      <edit-constraint></edit-constraint>
+      <add-filed v-if="addFiledLayerStatus"></add-filed>
+      <add-constraint v-else-if="addConstraintLayerStatus"></add-constraint>
     </div>
   </div>
 </template>
@@ -49,11 +49,21 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import AddFiled from '@/components/indexModule/rightSection/constraint/layer/addFiled/AddFiled.vue';
-import EditConstraint from '@/components/indexModule/rightSection/constraint/layer/editConstraint/EditConstraint.vue';
+import {pageManageStore} from "@/store/modules/PageManageStore";
+import AddConstraint from '@/components/indexModule/rightSection/constraint/layer/addConstraint/AddConstraint.vue';
+
 @Component({
-  components: {EditConstraint, AddFiled}
+  components: {AddConstraint, AddFiled}
 })
 export default class Layer extends Vue {
   name: string = '字段名';
+
+  get addFiledLayerStatus() {
+    return pageManageStore.isShowAddFiledLayer;
+  }
+
+  get addConstraintLayerStatus() {
+    return pageManageStore.isShowConstraintLayer;
+  }
 }
 </script>

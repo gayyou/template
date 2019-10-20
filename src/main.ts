@@ -2,21 +2,11 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router/router';
 import store from './store/store';
-<<<<<<< HEAD
-import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
-=======
-import 'view-design/dist/styles/iview.css';
-import { Button, Upload } from 'view-design';
-
-Vue.component('Button', Button);
-Vue.component('Upload', Upload);
+import iviewUI from 'view-design'
 
 
-
->>>>>>> 84cb759d6a60971ad9eef0b5dbb9157db481e7ed
-
-Vue.use(ViewUI);
+Vue.use(iviewUI)
 Vue.config.productionTip = false;
 
 new Vue({
