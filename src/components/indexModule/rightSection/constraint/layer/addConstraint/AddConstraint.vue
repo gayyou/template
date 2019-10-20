@@ -52,8 +52,10 @@
       <Button type="primary" style="display: block; float: left">添加新约束</Button>
       <Button type="error" style="display: block; margin-left: 170px">删除</Button>
     </div>
-    <div class="constraint-list-container"></div>
+    <div class="constraint-list-container">
+    </div>
     <div class="item-button"></div>
+
   </div>
 </template>
 

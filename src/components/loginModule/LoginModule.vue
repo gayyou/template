@@ -48,7 +48,8 @@
         <loginbox></loginbox> 
         <div class = "square"></div>  
         <div class = "platform-name">智能审批后台管理平台</div>  
-        <div class = "copyright">版本信息</div>          
+        <div class = "copyright">版本信息</div>  
+        <EditFiledConstraint></EditFiledConstraint>        
     </div>   
 </template>
 
@@ -56,11 +57,23 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import loginbox from '@/components/loginModule/loginbox/loginbox.vue';
+import EditFiledConstraint from "@/components/public/layer/EditFiledConstraint.vue"
 
 @Component({
-  components: {loginbox}
+  components: {loginbox, EditFiledConstraint}
 })
 export default class LoginModule extends Vue {
+    mounted() {
+        this.reSize()            
+    }
+    reSize() {
+        var whdef = 100/960;
+        var wH = window.screen.availHeight;
+        var wW = window.screen.availWidth;
+        var rem = wW * whdef;
+        
+        document.documentElement.style.fontSize = rem + "px"
+    }
 
 }
 </script>
