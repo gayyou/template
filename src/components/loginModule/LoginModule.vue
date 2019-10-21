@@ -1,32 +1,42 @@
 <style lang="scss" scoped>
 .background-container {
-    position: relative;
-    height: 5.4rem;
-    width: 9.6rem;
+    position: fixed;
+    height: 100%;
+    width: 100%;
     background-color: green;
     background-size: 100%;
     background-image: url(../../assets/images/icons/login.png);
 }
 
 .square {
-    position: absolute;
+    position: relative;
     width: 0.5rem;
     height: 0.5rem;
     border: 0.04rem solid rgba(255,255,255,1);
-    top: 0.8rem;
-    left: 3.29rem;
+    display: inline-block;
 }
 
 .platform-name{
-    position: absolute;
-    left: 3.95rem;
-    top: 0.94rem;
+    position: relative;
+    display: inline-block;
     width: 2.6rem;
-    height: 0.23rem;
+    height: 100%;
     font-size: 0.24rem;
     font-family:Source Han Sans CN;
     font-weight:500;
     color:rgba(255,255,255,1);
+    vertical-align: top;
+}
+
+.platform-title{
+    width: 3.5rem;
+    height: 0.5rem;
+    position: absolute;
+    top: 0.94rem;
+    left: 50%;
+    margin-left: -1.75rem;
+    line-height: 0.5rem;
+    font-size: 0;
 }
 
 .copyright {
@@ -38,18 +48,21 @@
     font-weight:400;
     color:rgba(255,255,255,1);
     bottom: 0.12rem;
-    left: 4.57rem;
+    left: 50%;
+    margin-left: -0.25rem; 
 }
 
 </style>
 
 <template>
     <div class = "background-container">
-        <loginbox></loginbox> 
-        <div class = "square"></div>  
-        <div class = "platform-name">智能审批后台管理平台</div>  
+        <loginbox></loginbox>
+        <div class="platform-title">
+            <div class = "square"></div>  
+            <div class = "platform-name">智能审批后台管理平台</div>  
+        </div> 
         <div class = "copyright">版本信息</div>  
-        <EditFiledConstraint></EditFiledConstraint>        
+        <!-- <EditFiledConstraint></EditFiledConstraint>         -->
     </div>   
 </template>
 

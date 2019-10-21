@@ -2,8 +2,8 @@
 .login-box {
     position: absolute;
     top: 1.65rem;
-    right: 2.7rem;
-    left: 2.7rem;
+    left:  50%;
+    margin-left: -2.1rem;
     bottom: 1.35rem;
     height: 2.4rem;
     width: 4.2rem;
@@ -18,7 +18,7 @@
     position: relative;
     width: 2.38rem;
     height: 0.36rem;
-    margin-left: 0.78rem; 
+    margin: auto;
     margin-top: 0.38rem;
 }
 
@@ -49,7 +49,7 @@
     position: relative;
     width: 2.38rem;
     height: 0.36rem;
-    margin-left: 0.78rem; 
+    margin: auto; 
     margin-top: 0.16rem;
 }
 
@@ -81,36 +81,49 @@ input::-webkit-input-placeholder {
 }
 
 .remember-box {
-    position: absolute;
-    top: 1.39rem;
-    width: 0.1rem;
-    height: 0.1rem;
-    left: 1.05rem;
+    display: inline-block;
+    width: 0.15rem;
+    height: 0.15rem;
     border: 0.01rem solid rgba(255,255,255,1);
     cursor: pointer;
+    margin-right: 3px;
+    margin-top: 1px;
+    vertical-align: middle;
 }
 
 .remenberme {
-    position: absolute;
-    left: 1.23rem;
-    top: 1.4rem;
+    display: inline-block;
+    margin-right: 0.9rem;
     width:0.27rem;
     height:0.09rem;
     font-size:0.09rem;
     font-family:Source Han Sans CN;
     font-weight:400;
     color:rgba(255,255,255,1);
+    vertical-align: middle;
+
 }
 
 .forget-box{
-    position: absolute;
+    display: inline-block;
     width: 0.5rem;
     height: 0.09rem;
     top: 1.4rem;
     left: 2.7rem;
     font-size: 0.09rem;
     color: #FFFFFF;
-    background-image: url(../../../assets/images/icons/password.png)
+    background-image: url(../../../assets/images/icons/password.png);
+    vertical-align: middle;
+}
+
+.rem-forget-box{
+    position: absolute;
+    left: 50%;
+    margin-left: -0.92rem;
+    top: 1.4rem;
+    width: 1.93rem;
+    height:0.2rem;  
+    font-size: 0; 
 }
 
 .confirm-btn{
@@ -148,9 +161,11 @@ input::-webkit-input-placeholder {
             <div class = "password-image"></div>
             <input type = "password" class = "password-input" placeholder = "密码" ref = "Password" maxlength="8">           
         </div>
-        <input class = "remember-box" v-on:click = "isOnclick()" status = "deactive" ref = "remember" type="checkbox">
-        <div class = "remenberme">记住我</div>
-        <div class = "forget-box">忘记密码?</div>
+        <div class="rem-forget-box">
+            <input class = "remember-box" v-on:click = "isOnclick()" status = "deactive" ref = "remember" type="checkbox">
+            <div class = "remenberme">记住我</div>
+            <div class = "forget-box">忘记密码?</div>
+        </div>
         <div class = "confirm-btn" v-on:click = "Judge()">确认</div>
         <div class = "cancel-btn">取消</div>
     </div>      
